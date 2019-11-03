@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane
+    fx:controller="it.reveal.relext.annotation.controllers.LoadController"
+    xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10"
+    vgap="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+    <HBox spacing="5" alignment="center_left"
+        GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Button text="Load file" fx:id="loadBtn"
+            onAction="#loadTextAction" />
+        <Text fx:id="fileOrigin"></Text>
+    </HBox>
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <TextArea fx:id="text" minHeight="200" />
+        <ScrollPane GridPane.columnIndex="0"
+            GridPane.rowIndex="2" GridPane.columnSpan="2"
+            GridPane.rowSpan="2">
+            <content>
+                <TextFlow fx:id="textFlow" />
+            </content>
+        </ScrollPane>
+    </VBox>
+    <VBox GridPane.columnIndex="3" GridPane.columnSpan="1"
+        GridPane.rowSpan="3">
+        <Text text="Entity types"></Text>
+        <ListView fx:id="entityTypes" prefWidth="100"
+            prefHeight="150"></ListView>
+         <Text text="Relation types"></Text>
+        <ListView fx:id="relationTypes" prefWidth="100"
+            prefHeight="150"></ListView>
+    </VBox>
+</GridPane>
